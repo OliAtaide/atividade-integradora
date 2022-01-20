@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+    :root {
+        --color1: #395779;
+        --color2: #044469;
+        --color3: #08A2B5;
+        --color4: #D0FFFF;
+    }
+
+    * {
+        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    nav {
+        background-color: var(--color2);
+        height: 140px;
+    }
+
+    .bloco {
+        border: 1px solid var(--color2);
+    }
+
+    .bloco1 {
+        border-radius: 1em;
+    }
+
+    .bloco-titulo {
+        background-color: var(--color3);
+        border-radius: 0.5em 0.5em 0 0;
+        font-weight: bold;
+    }
+
+    .bloco2 {
+        border-radius: 0 1em 1em 1em;
+    }
+
+    h6 {
+        color: var(--color2);
+    }
+
+    p {
+        color: var(--color3);
+    }
+
+    button {
+        background-color: var(--color1) !important;
+        border-radius: 0.5em !important;
+    }
+</style>
+
+<body>
+    <nav class="text-white text-center d-flex flex-column justify-content-center">
+        <h1 class="fw-bold">Atividade Integradora</h1>
+    </nav>
+    <div class="container">
+        <div class="bloco bloco1 mt-3 p-3">
+            <span class="text-center">
+                <h6 class="fw-bold">Em cada questão, escolha a opção correta que leve Joano e sua família a terem
+                    direito a receber os
+                    benefícios do PBF. </h6>
+                <p class="fw-bold">Vamos relembrar a história dele?</p>
+            </span>
+            <img src="images/image1.png" alt="" class="img-fluid">
+            <span class="text-center">
+                <p class="fw-bold">
+                    Joano está com 14 anos, está fora da escola e trabalha no sinal limpando para-brisas. É o 5º de sete
+                    filhos que sua mãe cria, pois a mesma já foi mãe nove vezes e está grávida novamente do último
+                    companheiro que está preso por porte ilegal de arma. Joano gosta de futebol, tem 1,40 e 39 quilos.
+                    Na família são 7 pessoas: a mãe de Joano com 33 anos, sua avó, com 67 anos, 03 meninas com 2, 5 e 10
+                    anos, 01 menino com 11 e Joano com 14.
+                </p>
+            </span>
+        </div>
+        <div class="">
+            <div class="bloco-titulo text-white btn mt-3 px-4">
+                Pergunta 1
+            </div>
+            <div class="bloco bloco2 p-3 d-flex flex-column">
+                <h6 class="fw-bold text-center">Agora, a mãe de Joano está trabalhando com carteira de trabalho assinada
+                    em uma
+                    fábrica de
+                    embalagens e está recebendo 01 salário mínimo por mês. Vamos procurar o PBF?</h6>
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <div class="bloco-titulo text-white btn mt-3 px-4">
+                                Opção 1
+                            </div>
+                            <div class="bloco bloco2 p-3 text-center">
+                                <h6 class="fw-bold">
+                                    A família de Joano não tem direito ao PBF, pois sua mãe tem carteira de trabalho
+                                    assinada.
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <div class="bloco-titulo text-white btn mt-3 px-4">
+                                Opção 2
+                            </div>
+                            <div class="bloco bloco2 p-3 text-center">
+                                <h6 class="fw-bold">
+                                    O fato de a família ter membro com carteira de trabalho assinada não a exclui do
+                                    PBF.
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn text-white fw-bold px-5 mt-3 align-self-center">Enviar resposta</button>
+            </div>
+        </div>
+        <!-- <div class="swiper mySwiper">
+            <div class="swiper-wrapper mt-3">
+                <div class="swiper-slide">
+                </div>
+            </div>
+        </div> -->
+    </div>
+</body>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    // var swiper = new Swiper(".mySwiper", {
+    //     pagination: {
+    //         el: ".swiper-pagination",
+    //         clickable: true,
+    //         renderBullet: function (index, className) {
+    //             var bullet = '<span class="' + className + ' btn  py-0 px-2">Lâmina ' + (index + 1) + '</span>';
+    //             return bullet;
+    //         },
+
+    //     },
+    //     nextButton: '.swiper-button-disabled',
+    //     prevButton: '.swiper-button-disabled',
+    //     initialSlide: getURL(),
+
+    // });
+</script>
+
+</html>
