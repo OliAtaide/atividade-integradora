@@ -12,6 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 </head>
 
 <style>
@@ -28,7 +32,7 @@
         font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
-    nav {
+    .header {
         background-color: var(--color2);
         height: 140px;
     }
@@ -59,27 +63,53 @@
         color: var(--color3);
     }
 
-    button {
+    .enviar-resposta, .proxima-pergunta {
         background-color: var(--color1) !important;
         border-radius: 0.5em !important;
+    }
+
+    .opcao .bloco2 {
+        cursor: pointer;
+    }
+
+    .selected {
+        background-color: var(--color4);
+    }
+
+    .footer {
+        background-color: #F0F0F0;
+    }
+
+    h1, h6, p {
+        font-weight: 600;
+    }
+
+    h6, p, span, button{
+        font-size: 20px;
+    }
+
+    .modal h1{
+        color: var(--color3);
     }
 </style>
 
 <body>
-    <nav class="text-white text-center d-flex flex-column justify-content-center">
-        <h1 class="fw-bold">Atividade Integradora</h1>
+    <nav class="header text-white text-center d-flex flex-column justify-content-center">
+        <h1 class="">Atividade Integradora</h1>
     </nav>
     <div class="container">
-        <div class="bloco bloco1 mt-3 p-3">
+        <div class="bloco bloco1 mt-3  px-5 p-3">
             <span class="text-center">
-                <h6 class="fw-bold">Em cada questão, escolha a opção correta que leve Joano e sua família a terem
+                <h6 class="">Em cada questão, escolha a opção correta que leve Joano e sua família a terem
                     direito a receber os
                     benefícios do PBF. </h6>
-                <p class="fw-bold">Vamos relembrar a história dele?</p>
+                <p class="">Vamos relembrar a história dele?</p>
             </span>
-            <img src="images/image1.png" alt="" class="img-fluid">
+            <div class="w-75 mb-3 mx-auto">
+                <img src="images/image1.png" alt="" class="img-fluid">
+            </div>
             <span class="text-center">
-                <p class="fw-bold">
+                <p class="">
                     Joano está com 14 anos, está fora da escola e trabalha no sinal limpando para-brisas. É o 5º de sete
                     filhos que sua mãe cria, pois a mesma já foi mãe nove vezes e está grávida novamente do último
                     companheiro que está preso por porte ilegal de arma. Joano gosta de futebol, tem 1,40 e 39 quilos.
@@ -89,22 +119,23 @@
             </span>
         </div>
         <div class="">
-            <div class="bloco-titulo text-white btn mt-3 px-4">
+            <div class="bloco-titulo text-white d-inline-block mt-3 px-4 py-2">
                 Pergunta 1
             </div>
             <div class="bloco bloco2 p-3 d-flex flex-column">
-                <h6 class="fw-bold text-center">Agora, a mãe de Joano está trabalhando com carteira de trabalho assinada
+                <h6 class=" text-center">Agora, a mãe de Joano está trabalhando com carteira de trabalho assinada
                     em uma
                     fábrica de
                     embalagens e está recebendo 01 salário mínimo por mês. Vamos procurar o PBF?</h6>
                 <div class="row">
                     <div class="col">
-                        <div>
-                            <div class="bloco-titulo text-white btn mt-3 px-4">
+                        <div class="opcao">
+                            <div class="bloco-titulo text-white d-inline-block mt-3 px-4 py-2">
                                 Opção 1
                             </div>
                             <div class="bloco bloco2 p-3 text-center">
-                                <h6 class="fw-bold">
+                                <input type="hidden" name="" value="1">
+                                <h6 class="">
                                     A família de Joano não tem direito ao PBF, pois sua mãe tem carteira de trabalho
                                     assinada.
                                 </h6>
@@ -112,12 +143,13 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div>
-                            <div class="bloco-titulo text-white btn mt-3 px-4">
+                        <div class="opcao">
+                            <div class="bloco-titulo text-white d-inline-block mt-3 px-4 py-2">
                                 Opção 2
                             </div>
                             <div class="bloco bloco2 p-3 text-center">
-                                <h6 class="fw-bold">
+                                <input type="hidden" name="" value="2">
+                                <h6 class="">
                                     O fato de a família ter membro com carteira de trabalho assinada não a exclui do
                                     PBF.
                                 </h6>
@@ -125,7 +157,10 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn text-white fw-bold px-5 mt-3 align-self-center">Enviar resposta</button>
+                <button disabled class="enviar-resposta btn text-white  px-5 mt-3 align-self-center" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">
+                    Enviar resposta
+                </button>
             </div>
         </div>
         <!-- <div class="swiper mySwiper">
@@ -134,7 +169,31 @@
                 </div>
             </div>
         </div> -->
+
     </div>
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header justify-content-end">
+                    <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="bi bi-x-circle"></i>
+                    </button>
+                </div>
+                <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="footer mt-3 d-flex justify-content-center py-2">
+        <img src="images/logos.png" alt="" class="img-fluid" />
+    </nav>
 </body>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -155,6 +214,45 @@
     //     initialSlide: getURL(),
 
     // });
+
+    var opcao;
+
+    
+
+    $(".opcao .bloco2").click(function () {
+        $('.enviar-resposta').prop("disabled", false);
+
+        $('.selected').removeClass('selected');
+        $(this).addClass('selected');
+
+        opcao = $(this).children()[0].value;
+    });
+
+    $('.enviar-resposta').click(function () {
+        var resposta = 2;
+        var texto, imagem;
+
+        if(opcao == 2){
+            texto = 'Resposta correta!';
+            imagem = 'images/correta.png';
+        }
+        else{
+            texto = 'Resposta errada!';
+            imagem = 'images/errada.png';
+        }
+
+        $('.modal-body').html(
+            '<h1>' + texto +`</h1>
+            <img class="mt-5" src="` + imagem + `" alt="">
+            <button type="button" class="proxima-pergunta btn text-white  px-5 my-5 align-self-center">
+                Próxima pergunta
+            <i class="bi bi-arrow-right"></i>
+            </button>
+            `
+        )
+    })
+
+
 </script>
 
 </html>
