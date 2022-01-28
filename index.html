@@ -74,6 +74,7 @@
 
     .opcao .bloco2 {
         cursor: pointer;
+        height: calc(100% - 60px);
     }
 
     .selected {
@@ -130,7 +131,7 @@
         justify-self: center;
         display: block;
         top: -18px;
-        z-index: 3;
+        z-index: -1;
     }
 
     .swiper-slide {
@@ -142,6 +143,10 @@
 
     .swiper-slide:not(.swiper-slide-active) {
         height: 100vh;
+    }
+
+    .bullet-8{
+        display: none;
     }
 </style>
 
@@ -191,7 +196,7 @@
             el: ".swiper-pagination",
             clickable: false,
             renderBullet: function (index, className) {
-                var bullet = '<span class="' + className + ' btn rounded-circle mx-2">' + (index + 1) + '</span>';
+                var bullet = '<span class="' + className + ' bullet-' + (index + 1) + ' btn rounded-circle mx-2">' + (index + 1) + '</span>';
                 return bullet;
             },
         },
@@ -254,8 +259,8 @@
                     </h6>
                     <div class="row">
                         <div class="col-sm">
-                            <div class="opcao">
-                                <div class="bloco-titulo text-white d-inline-block mt-3 px-4 py-2">
+                            <div class="opcao mt-3 h-100">
+                                <div class="bloco-titulo text-white d-inline-block px-4 py-2">
                                     Opção 1
                                 </div>
                                 <div class="bloco bloco2 p-3 text-center">
@@ -267,8 +272,8 @@
                             </div>
                         </div>
                         <div class="col-sm">
-                            <div class="opcao">
-                                <div class="bloco-titulo text-white d-inline-block mt-3 px-4 py-2">
+                            <div class="opcao mt-3 h-100">
+                                <div class="bloco-titulo text-white d-inline-block px-4 py-2">
                                     Opção 2
                                 </div>
                                 <div class="bloco bloco2 p-3 text-center">
@@ -337,10 +342,6 @@
             `
     )
 
-    
-
-    
-
     function resultado(questao) {
         var resposta = respostas[questao];
         var texto, imagem;
@@ -381,7 +382,9 @@
         opcao = $(this).children()[0].value;
     });
 
-    $(".swiper-pagination").append('<div class="d-flex justify-content-center"><div class="divider"></div></div>');
+    console.log($(".swiper-pagination"));
+
+    $(".swiper").append('<div class="d-flex justify-content-center"><div class="divider"></div></div>');
 </script>
 
 </html>
