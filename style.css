@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+:root {
+    --color1: #395779;
+    --color2: #044469;
+    --color3: #08A2B5;
+    --color4: #D0FFFF;
+}
+
+* {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.header {
+    background-color: var(--color2);
+    height: 140px;
+}
+
+.bloco {
+    border: 1px solid var(--color2);
+}
+
+.bloco1 {
+    border-radius: 1em;
+}
+
+.bloco-titulo {
+    background-color: var(--color3);
+    border-radius: 0.5em 0.5em 0 0;
+    font-weight: bold;
+}
+
+.bloco2 {
+    border-radius: 0 1em 1em 1em;
+}
+
+h6 {
+    color: var(--color2);
+}
+
+p,
+.bloco2 h1 {
+    color: var(--color3);
+}
+
+.enviar-resposta,
+.proxima-pergunta,
+.voltar {
+    background-color: var(--color1) !important;
+    border-radius: 0.5em !important;
+}
+
+.opcao .bloco2 {
+    cursor: pointer;
+    height: calc(100% - 60px);
+}
+
+.selected {
+    background-color: var(--color4);
+}
+
+.footer {
+    background-color: #F0F0F0;
+}
+
+h1,
+h6,
+p {
+    font-weight: 600;
+}
+
+h6,
+p,
+span,
+button {
+    font-size: 20px;
+}
+
+.modal h1 {
+    color: var(--color3);
+}
+
+.swiper-pagination {
+    position: static !important;
+}
+
+.swiper-pagination-bullet {
+    border: 2px solid #265974 !important;
+    color: #265974 !important;
+    background-color: white !important;
+    font-weight: bold;
+    font-size: 12px;
+    opacity: 100% !important;
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #265974 !important;
+    color: white !important;
+}
+
+.divider {
+    width: 300px;
+    height: 2px;
+    background-color: #265974;
+    position: relative;
+    justify-self: center;
+    display: block;
+    top: -18px;
+    z-index: -1;
+}
+
+.swiper-slide {
+    height: auto;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+    height: 100vh;
+}
+
+.bullet-8 {
+    display: none;
+}
